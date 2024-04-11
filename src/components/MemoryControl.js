@@ -2,19 +2,26 @@ import React, { useState } from "react";
 import NewMemoryForm from "./NewMemoryForm";
 import MemoryList from "./MemoryList";
 import MemoryDetail from "./MemoryDetail";
+import EditMemoryForm from './EditMemoryForm';
 
 function MemoryControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
   const [mainMemoryList, setMainMemoryList] = useState([]);
   const [selectedMemory, setSelectedMemory] = useState(null);
+  const [editing, setEditing] = useState(false);
 
   const handleClick = () => {
     if (selectedMemory != null) {
       setFormVisibleOnPage(false);
       setSelectedMemory(null);
+      setEditing(false);
     } else {
       setFormVisibleOnPage(!formVisibleOnPage);
     }
+  }
+
+  const handleEditClick = () => {
+    setEditing(true);
   }
 
   const handleCreatingNewMemory = (newMemory) => {
@@ -34,12 +41,27 @@ function MemoryControl() {
     setSelectedMemory(null);
   }
 
+  const handleEditingMemory = (memoryToEdit) => {
+    const editedMainMemoryList = mainMemoryList
+    .filter(memory => memory.id !== selectedMemory.id)
+    .concat(memoryToEdit);
+    setMainMemoryList(editedMainMemoryList);
+    setEditing(false);
+    setSelectedMemory(null);
+  }
+
   let currentlyVisibleState = null;
   let buttonText = null;
 
-  if (selectedMemory != null) {
+  if (editing) {
+    currentlyVisibleState = <EditMemoryForm
+      memory={selectedMemory}
+      onEditingMemory={handleEditingMemory}/>
+    buttonText = "Home";
+  } else if (selectedMemory != null) {
     currentlyVisibleState = <MemoryDetail
       memory = {selectedMemory}
+      onClickingEdit = {handleEditClick}
       onClickingDelete = {handleDeletingMemory}/>;
     buttonText = "Home";
   } else if (formVisibleOnPage) {

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { v4 } from 'uuid';
+import ReusableForm from "./ReusableForm";
 
 function NewMemoryForm(props) {
   function handleNewMemoryFormSubmission(event) {
@@ -15,28 +16,9 @@ function NewMemoryForm(props) {
 
   return (
     <React.Fragment>
-      <form onSubmit={handleNewMemoryFormSubmission}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name of memory"
-          required/>
-        <br/>
-        <input
-          type="text"
-          name="when"
-          placeholder="When?"
-          required/>
-        <br/>
-        <textarea
-          type="text"
-          name="description"
-          placeholder="Describe the memory. Be specific!"
-          required/>
-        <br/>
-        <button type='submit'>Create</button>
-        <hr/>
-      </form>
+      <ReusableForm
+        formSubmissionHandler={handleNewMemoryFormSubmission}
+        buttonText={"Create"}/>
     </React.Fragment>
   );
 }
