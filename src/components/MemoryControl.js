@@ -6,7 +6,8 @@ class MemoryControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      mainMemoryList: []
     };
   }
 
@@ -14,15 +15,25 @@ class MemoryControl extends React.Component {
     this.setState(prevState => ({formVisibleOnPage: !prevState.formVisibleOnPage}));
   }
 
+  handleCreatingNewMemory = (newMemory) => {
+    const newMainMemoryList = this.state.mainMemoryList.concat(newMemory);
+    this.setState({
+      mainMemoryList: newMainMemoryList,
+      formVisibleOnPage: false
+    });
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
 
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewMemoryForm/>;
+      currentlyVisibleState = <NewMemoryForm
+        onNewMemoryCreation={this.handleCreatingNewMemory}/>;
       buttonText = "Home";
     } else {
-      currentlyVisibleState = <MemoryList/>
+      currentlyVisibleState = <MemoryList
+        memoryList={this.state.mainMemoryList}/>;
       buttonText = "Create Memory";
     }
     return (
