@@ -28,12 +28,19 @@ function MemoryControl() {
     setSelectedMemory(memorySelection);
   }
 
+  const handleDeletingMemory = (id) => {
+    const newMainMemoryList = mainMemoryList.filter(memory => memory.id !== id);
+    setMainMemoryList(newMainMemoryList);
+    setSelectedMemory(null);
+  }
+
   let currentlyVisibleState = null;
   let buttonText = null;
 
   if (selectedMemory != null) {
     currentlyVisibleState = <MemoryDetail
-      memory = {selectedMemory}/>;
+      memory = {selectedMemory}
+      onClickingDelete = {handleDeletingMemory}/>;
     buttonText = "Home";
   } else if (formVisibleOnPage) {
     currentlyVisibleState = <NewMemoryForm
