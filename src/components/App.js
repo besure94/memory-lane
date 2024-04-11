@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from './Header';
-import MemoryList from './MemoryList';
+import MemoryControl from './MemoryControl';
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <MemoryList/>
+      <MemoryControl/>
     </div>
   );
 }
