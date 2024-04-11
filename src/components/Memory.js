@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Memory(props) {
   return (
@@ -9,6 +10,12 @@ function Memory(props) {
       <hr/>
     </React.Fragment>
   );
+}
+
+Memory.propTypes = {
+  name: PropTypes.string.isRequired,
+  time: PropTypes.string,
+  description: PropTypes.string.isRequired
 }
 
 export default Memory;
