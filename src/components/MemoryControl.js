@@ -81,17 +81,17 @@ function MemoryControl() {
     currentlyVisibleState = <EditMemoryForm
       memory={selectedMemory}
       onEditingMemory={handleEditingMemory}/>
-    buttonText = "Home";
+    buttonText = "Memory List";
   } else if (selectedMemory != null) {
     currentlyVisibleState = <MemoryDetail
       memory = {selectedMemory}
       onClickingEdit = {handleEditClick}
       onClickingDelete = {handleDeletingMemory}/>;
-    buttonText = "Home";
+    buttonText = "Memory List";
   } else if (formVisibleOnPage) {
     currentlyVisibleState = <NewMemoryForm
       onNewMemoryCreation={handleCreatingNewMemory}/>;
-    buttonText = "Home";
+    buttonText = "Memory List";
   } else {
     currentlyVisibleState = <MemoryList
       onMemorySelection={handleChangingSelectedMemory}
