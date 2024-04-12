@@ -1,16 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NewMemoryForm from "./NewMemoryForm";
 import MemoryList from "./MemoryList";
 import MemoryDetail from "./MemoryDetail";
 import EditMemoryForm from './EditMemoryForm';
 import db from './../firebase.js';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 
 function MemoryControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
   const [mainMemoryList, setMainMemoryList] = useState([]);
   const [selectedMemory, setSelectedMemory] = useState(null);
   const [editing, setEditing] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const unSubscribe = onSnapshot(
+      collection(db, "memories"),
+      (collectionSnapshot) => {
+        const memories = [];
+        collectionSnapshot.forEach((doc) => {
+          memories.push({
+            name: doc.data().name,
+            when: doc.data().when,
+            description: doc.data().description,
+            id: doc.id
+          });
+        });
+        setMainMemoryList(memories);
+      },
+      (error) => {
+        setError(error.message);
+      }
+    );
+
+    return () => unSubscribe();
+  }, []);
 
   const handleClick = () => {
     if (selectedMemory != null) {
@@ -54,7 +78,9 @@ function MemoryControl() {
   let currentlyVisibleState = null;
   let buttonText = null;
 
-  if (editing) {
+  if (error) {
+    currentlyVisibleState = <p>There was an error: {error}</p>
+  } else if (editing) {
     currentlyVisibleState = <EditMemoryForm
       memory={selectedMemory}
       onEditingMemory={handleEditingMemory}/>
@@ -78,7 +104,7 @@ function MemoryControl() {
   return (
     <React.Fragment>
       {currentlyVisibleState}
-      <button onClick={handleClick}>{buttonText}</button>
+      {error ? null : <button onClick={handleClick}>{buttonText}</button>}
     </React.Fragment>
   );
 }
