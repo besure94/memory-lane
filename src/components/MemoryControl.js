@@ -66,11 +66,9 @@ function MemoryControl() {
     setSelectedMemory(null);
   }
 
-  const handleEditingMemory = (memoryToEdit) => {
-    const editedMainMemoryList = mainMemoryList
-    .filter(memory => memory.id !== selectedMemory.id)
-    .concat(memoryToEdit);
-    setMainMemoryList(editedMainMemoryList);
+  const handleEditingMemory = async (memoryToEdit) => {
+    const memoryReference = doc(db, "memories", memoryToEdit.id);
+    await updateDoc(memoryReference, memoryToEdit);
     setEditing(false);
     setSelectedMemory(null);
   }
