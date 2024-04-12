@@ -3,6 +3,8 @@ import NewMemoryForm from "./NewMemoryForm";
 import MemoryList from "./MemoryList";
 import MemoryDetail from "./MemoryDetail";
 import EditMemoryForm from './EditMemoryForm';
+import db from './../firebase.js';
+import { collection, addDoc } from 'firebase/firestore';
 
 function MemoryControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -24,9 +26,8 @@ function MemoryControl() {
     setEditing(true);
   }
 
-  const handleCreatingNewMemory = (newMemory) => {
-    const newMainMemoryList = mainMemoryList.concat(newMemory);
-    setMainMemoryList(newMainMemoryList);
+  const handleCreatingNewMemory = async (newMemory) => {
+    await addDoc(collection(db, "memories"), newMemory);
     setFormVisibleOnPage(false);
   }
 
