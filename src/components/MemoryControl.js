@@ -3,7 +3,7 @@ import NewMemoryForm from "./NewMemoryForm";
 import MemoryList from "./MemoryList";
 import MemoryDetail from "./MemoryDetail";
 import EditMemoryForm from './EditMemoryForm';
-import db from './../firebase.js';
+import { db } from './../firebase.js';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 
 function MemoryControl() {
