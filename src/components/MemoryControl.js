@@ -60,9 +60,8 @@ function MemoryControl() {
     setSelectedMemory(memorySelection);
   }
 
-  const handleDeletingMemory = (id) => {
-    const newMainMemoryList = mainMemoryList.filter(memory => memory.id !== id);
-    setMainMemoryList(newMainMemoryList);
+  const handleDeletingMemory = async (id) => {
+    await deleteDoc(doc(db, "memories", id));
     setSelectedMemory(null);
   }
 
