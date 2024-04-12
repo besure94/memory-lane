@@ -3,7 +3,7 @@ import NewMemoryForm from "./NewMemoryForm";
 import MemoryList from "./MemoryList";
 import MemoryDetail from "./MemoryDetail";
 import EditMemoryForm from './EditMemoryForm';
-import { db } from './../firebase.js';
+import { db, auth } from './../firebase.js';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 
 function MemoryControl() {
@@ -72,38 +72,46 @@ function MemoryControl() {
     setSelectedMemory(null);
   }
 
-  let currentlyVisibleState = null;
-  let buttonText = null;
+  if (auth.currentUser == null) {
+    return (
+      <React.Fragment>
+        <h1>You must be signed in to access this application!</h1>
+      </React.Fragment>
+    )
+  } else if (auth.currentUser != null) {
+    let currentlyVisibleState = null;
+    let buttonText = null;
 
-  if (error) {
-    currentlyVisibleState = <p>There was an error: {error}</p>
-  } else if (editing) {
-    currentlyVisibleState = <EditMemoryForm
-      memory={selectedMemory}
-      onEditingMemory={handleEditingMemory}/>
-    buttonText = "Memory List";
-  } else if (selectedMemory != null) {
-    currentlyVisibleState = <MemoryDetail
-      memory = {selectedMemory}
-      onClickingEdit = {handleEditClick}
-      onClickingDelete = {handleDeletingMemory}/>;
-    buttonText = "Memory List";
-  } else if (formVisibleOnPage) {
-    currentlyVisibleState = <NewMemoryForm
-      onNewMemoryCreation={handleCreatingNewMemory}/>;
-    buttonText = "Memory List";
-  } else {
-    currentlyVisibleState = <MemoryList
-      onMemorySelection={handleChangingSelectedMemory}
-      memoryList={mainMemoryList}/>;
-    buttonText = "Create Memory";
+    if (error) {
+      currentlyVisibleState = <p>There was an error: {error}</p>
+    } else if (editing) {
+      currentlyVisibleState = <EditMemoryForm
+        memory={selectedMemory}
+        onEditingMemory={handleEditingMemory}/>
+      buttonText = "Memory List";
+    } else if (selectedMemory != null) {
+      currentlyVisibleState = <MemoryDetail
+        memory = {selectedMemory}
+        onClickingEdit = {handleEditClick}
+        onClickingDelete = {handleDeletingMemory}/>;
+      buttonText = "Memory List";
+    } else if (formVisibleOnPage) {
+      currentlyVisibleState = <NewMemoryForm
+        onNewMemoryCreation={handleCreatingNewMemory}/>;
+      buttonText = "Memory List";
+    } else {
+      currentlyVisibleState = <MemoryList
+        onMemorySelection={handleChangingSelectedMemory}
+        memoryList={mainMemoryList}/>;
+      buttonText = "Create Memory";
+    }
+    return (
+      <React.Fragment>
+        {currentlyVisibleState}
+        {error ? null : <button onClick={handleClick}>{buttonText}</button>}
+      </React.Fragment>
+    );
   }
-  return (
-    <React.Fragment>
-      {currentlyVisibleState}
-      {error ? null : <button onClick={handleClick}>{buttonText}</button>}
-    </React.Fragment>
-  );
 }
 
 export default MemoryControl;
