@@ -9,6 +9,7 @@ function MemoryDetail(props) {
       <h2>Name: {memory.name}</h2>
       <h3>When? {memory.when}</h3>
       <h3>Description: {memory.description}</h3>
+      <h3>User: {memory.user}</h3>
       <button onClick={() => onClickingEdit(memory.id)}>Edit</button>
       <br/>
       <button onClick={() => onClickingDelete(memory.id)}>Delete</button>

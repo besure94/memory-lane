@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
+import { auth } from './../firebase.js';
 
 function NewMemoryForm(props) {
   function handleNewMemoryFormSubmission(event) {
@@ -9,6 +10,7 @@ function NewMemoryForm(props) {
       name: event.target.name.value,
       when: event.target.when.value,
       description: event.target.description.value,
+      user: auth.currentUser.email
     });
   }
 
