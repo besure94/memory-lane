@@ -6,9 +6,6 @@ import EditMemoryForm from './EditMemoryForm';
 import { db, auth } from './../firebase.js';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 
-console.log("Current user data: ", auth.currentUser);
-// console.log("Current user name/email: ", auth.currentUser.email);
-
 function MemoryControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
   const [mainMemoryList, setMainMemoryList] = useState([]);

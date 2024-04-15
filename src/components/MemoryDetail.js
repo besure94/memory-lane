@@ -6,10 +6,13 @@ function MemoryDetail(props) {
 
   return (
     <React.Fragment>
-      <h2>Name: {memory.name}</h2>
-      <h3>When? {memory.when}</h3>
-      <h3>Description: {memory.description}</h3>
-      <h3>User: {memory.user}</h3>
+      <h2>Memory:</h2>
+      <h2>{memory.name}</h2>
+      <h3>When?</h3>
+      <h3>{memory.when}</h3>
+      <h3>What?</h3>
+      <h3>{memory.description}</h3>
+      <h3>Submitted by {memory.user}</h3>
       <button onClick={() => onClickingEdit(memory.id)}>Edit</button>
       <br/>
       <button onClick={() => onClickingDelete(memory.id)}>Delete</button>
