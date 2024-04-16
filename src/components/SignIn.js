@@ -22,7 +22,7 @@ function SignIn() {
         setSignUpSuccess(`There was an error signing up: ${error.message}`);
       });
     } else {
-      setSignUpSuccess(`Passwords do not match. Please try again!`);
+      setSignUpSuccess(`Passwords do not match. Please try again.`);
     }
   }
 
