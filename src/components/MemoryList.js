@@ -12,6 +12,7 @@ function MemoryList(props) {
           when={memory.when}
           description={memory.description}
           user={memory.user}
+          date={memory.date}
           id={memory.id}
           key={memory.id}/>
       )}

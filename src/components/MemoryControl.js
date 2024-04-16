@@ -19,11 +19,14 @@ function MemoryControl() {
       (collectionSnapshot) => {
         const memories = [];
         collectionSnapshot.forEach((doc) => {
+          const submissionDate = doc.get('date', {serverTimestamps: "estimate"}).toDate();
+          const jsDate = new Date(submissionDate);
           memories.push({
             name: doc.data().name,
             when: doc.data().when,
             description: doc.data().description,
             user: doc.data().user,
+            date: jsDate,
             id: doc.id
           });
         });
