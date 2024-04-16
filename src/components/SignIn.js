@@ -13,7 +13,7 @@ function SignIn() {
     const password = event.target.password.value;
     const confirmPassword = event.target.confirmPassword.value;
 
-    if (password == confirmPassword) {
+    if (password === confirmPassword) {
       createUserWithEmailAndPassword(auth, email, password, confirmPassword)
       .then((userCredential) => {
         setSignUpSuccess(`Welcome! You've successfully signed up as ${userCredential.user.email}.`);
