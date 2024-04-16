@@ -51,14 +51,12 @@ function SignIn() {
         <input
           type="text"
           name="email"
-          placeholder="Email"
-          required/>
+          placeholder="Email"/>
         <br/>
         <input
           type="password"
           name="password"
-          placeholder="Password"
-          required/>
+          placeholder="Password"/>
         <br/>
         <button type="submit">Sign Up</button>
       </form>
@@ -69,14 +67,12 @@ function SignIn() {
         <input
           type="text"
           name="signInEmail"
-          placeholder="Email"
-          required/>
+          placeholder="Email"/>
         <br/>
         <input
           type="password"
           name="signInPassword"
-          placeholder="Password"
-          required/>
+          placeholder="Password"/>
         <br/>
         <button type="submit">Sign In</button>
       </form>
