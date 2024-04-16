@@ -11,13 +11,19 @@ function SignIn() {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    createUserWithEmailAndPassword(auth, email, password)
+    const confirmPassword = event.target.confirmPassword.value;
+
+    if (password == confirmPassword) {
+      createUserWithEmailAndPassword(auth, email, password, confirmPassword)
       .then((userCredential) => {
         setSignUpSuccess(`Welcome! You've successfully signed up as ${userCredential.user.email}.`);
       })
       .catch((error) => {
         setSignUpSuccess(`There was an error signing up: ${error.message}`);
       });
+    } else {
+      setSignUpSuccess(`Passwords do not match. Please try again!`);
+    }
   }
 
   function doSignIn(event) {
@@ -57,6 +63,11 @@ function SignIn() {
           type="password"
           name="password"
           placeholder="Password"/>
+        <br/>
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm Password"/>
         <br/>
         <button type="submit">Sign Up</button>
       </form>
