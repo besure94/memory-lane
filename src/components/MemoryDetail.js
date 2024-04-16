@@ -15,7 +15,7 @@ function MemoryDetail(props) {
       <h3>{memory.when}</h3>
       <h3>What?</h3>
       <h3>{memory.description}</h3>
-      <h3>Submitted by {memory.user}</h3>
+      <h3>Submitted by {memory.user} on {memory.date.toDateString()}</h3>
 
       {auth.currentUser.email === memory.user ? (
         <React.Fragment>
