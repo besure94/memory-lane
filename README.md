@@ -1,3 +1,15 @@
+# Extra Functionality Ideas
+
+* Add password verification for users when they sign up for an account.
+
+* Only allow a user to delete memories that they have created.
+
+* Add more properties to memories to make them more descriptive.
+
+* Add CSS styling to application.
+
+* Add timestamps to application to show when memories were created.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
