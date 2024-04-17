@@ -4,8 +4,6 @@
 
 * Add CSS styling to application.
 
-* Add timestamps to application to show when memories were created.
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
