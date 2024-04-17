@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 
 function ReusableForm(props) {
   const [selectedOption, setSelectedOption] = useState('');
-  const nameField = <input type="text" name="name" placeholder="Memory Name" required/>
-  const whenField = <input type="text" name="when" placeholder="When?" required/>
-  const shortTermDescripField = <textarea type="text" name="shortTermDescription" placeholder="Details" required/>
-  const longTermDescripField = <textarea type="text" name="longTermDescription" placeholder="What happened? Please be specific!" required/>
+  const nameField = <input type="text" name="name" placeholder="Memory Name" required/>;
+  const whenField = <input type="text" name="when" placeholder="When?" required/>;
+  const shortTermDescripField = <textarea type="text" name="shortTermDescription" placeholder="Details" required/>;
+  const longTermDescripField = <textarea type="text" name="longTermDescription" placeholder="What happened? Please be specific!" required/>;
+  const createButton = <button type='submit'>{props.buttonText}</button>;
+
 
   return (
     <React.Fragment>
@@ -60,6 +62,8 @@ function ReusableForm(props) {
               name="taste"
               placeholder="Taste"
               required/>
+            <br/>
+            {createButton}
           </React.Fragment>
         )}
         {selectedOption === 'Short Term' && (
@@ -67,6 +71,8 @@ function ReusableForm(props) {
             {nameField}
             <br/>
             {shortTermDescripField}
+            <br/>
+            {createButton}
           </React.Fragment>
         )}
         {selectedOption === 'Long Term' && (
@@ -76,10 +82,10 @@ function ReusableForm(props) {
             {whenField}
             <br/>
             {longTermDescripField}
+            <br/>
+            {createButton}
           </React.Fragment>
         )}
-        <br/>
-        <button type='submit'>{props.buttonText}</button>
       </form>
       <hr/>
     </React.Fragment>
