@@ -5,10 +5,17 @@ function ReusableForm(props) {
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
+        <select defaultValue="">
+          <option hidden value="Memory type">Memory Type</option>
+          <option value="sensory">Sensory</option>
+          <option value="shortTerm">Short Term</option>
+          <option value="longTerm">Long Term</option>
+        </select>
+        <br/>
         <input
           type="text"
           name="name"
-          placeholder="Name of memory"
+          placeholder="Name"
           required/>
         <br/>
         <input
@@ -20,7 +27,7 @@ function ReusableForm(props) {
         <textarea
           type="text"
           name="description"
-          placeholder="Describe the memory. Be specific!"
+          placeholder="What happened? Be specific!"
           required/>
         <br/>
         <button type='submit'>{props.buttonText}</button>
