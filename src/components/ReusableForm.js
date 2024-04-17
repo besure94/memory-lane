@@ -6,7 +6,7 @@ function ReusableForm(props) {
   const nameField = <input type="text" name="name" placeholder="Memory Name" required/>
   const whenField = <input type="text" name="when" placeholder="When?" required/>
   const shortTermDescripField = <textarea type="text" name="shortTermDescription" placeholder="Details" required/>
-  const longTermDescripField = <textarea type="text" name="longTermDescription" placeholder="What happened? Be specific!" required/>
+  const longTermDescripField = <textarea type="text" name="longTermDescription" placeholder="What happened? Please be specific!" required/>
 
   return (
     <React.Fragment>
@@ -25,30 +25,41 @@ function ReusableForm(props) {
             <br/>
             {whenField}
             <br/>
+            <br/>
+            <label>Descibe sensory feelings related to this memory.
+            <br/>
+            Be as specific as you'd like!</label>
+            <br/>
+            <br/>
             <input
               type="text"
               name="touch"
-              placeholder="Touch"/>
+              placeholder="Touch"
+              required/>
             <br/>
             <input
               type="text"
               name="sight"
-              placeholder="Sight"/>
+              placeholder="Sight"
+              required/>
             <br/>
             <input
               type="text"
               name="sound"
-              placeholder="Sound"/>
+              placeholder="Sound"
+              required/>
             <br/>
             <input
               type="text"
               name="smell"
-              placeholder="Smell"/>
+              placeholder="Smell"
+              required/>
             <br/>
             <input
               type="text"
               name="taste"
-              placeholder="Taste"/>
+              placeholder="Taste"
+              required/>
           </React.Fragment>
         )}
         {selectedOption === 'Short Term' && (

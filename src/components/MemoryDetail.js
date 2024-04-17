@@ -11,40 +11,41 @@ function MemoryDetail(props) {
     <React.Fragment>
       <h2>Memory:</h2>
       <p>{memory.name}</p>
-      <h3>Type:</h3>
+      <h2>Type:</h2>
       <p>{memory.type}</p>
-      <p><em>Submitted by {memory.user} on {memory.date.toDateString()}</em></p>
 
       {memory.type === "Sensory" && (
         <React.Fragment>
-          <h3>When?</h3>
-          <h3>{memory.when}</h3>
-          <h3>Touch:</h3>
+          <h2>When?</h2>
+          <p>{memory.when}</p>
+          <h2>Touch:</h2>
           <p>{memory.touch}</p>
-          <h3>Sight:</h3>
+          <h2>Sight:</h2>
           <p>{memory.sight}</p>
-          <h3>Sound:</h3>
+          <h2>Sound:</h2>
           <p>{memory.sound}</p>
-          <h3>Smell:</h3>
+          <h2>Smell:</h2>
           <p>{memory.smell}</p>
-          <h3>Taste:</h3>
+          <h2>Taste:</h2>
           <p>{memory.taste}</p>
         </React.Fragment>
       )}
 
       {memory.type === "Short Term" && (
         <React.Fragment>
-          <h3>Details</h3>
+          <h2>Details:</h2>
           <p>{memory.shortTermDescription}</p>
         </React.Fragment>
       )}
 
       {memory.type === "Long Term" && (
         <React.Fragment>
-          <h3>Description</h3>
+          <h2>Description:</h2>
           <p>{memory.longTermDescription}</p>
         </React.Fragment>
       )}
+
+      <p><em>Submitted by {memory.user} on {memory.date.toDateString()}</em></p>
 
       {auth.currentUser.email === memory.user ? (
         <React.Fragment>

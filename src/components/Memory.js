@@ -6,7 +6,7 @@ function Memory(props) {
     <React.Fragment>
       <div onClick={() => props.whenMemoryClicked(props.id)}>
         <h2>{props.name}</h2>
-        <h3>Submitted by {props.user} on {props.date.toDateString()}</h3>
+        <p><em>Submitted by <strong>{props.user}</strong> on <strong>{props.date.toDateString()}</strong></em></p>
         <hr/>
       </div>
     </React.Fragment>
