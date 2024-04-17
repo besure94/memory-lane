@@ -1,38 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 function ReusableForm(props) {
+  const [selectedOption, setSelectedOption] = useState('');
+  const nameField = <input type="text" name="name" placeholder="Memory Name" required/>
+  const whenField = <input type="text" name="when" placeholder="When?" required/>
+  const shortTermDescripField = <textarea type="text" name="shortTermDescription" placeholder="Details" required/>
+  const longTermDescripField = <textarea type="text" name="longTermDescription" placeholder="What happened? Be specific!" required/>
+
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        <select defaultValue="">
-          <option hidden value="Memory type">Memory Type</option>
+        <select defaultValue="" class="form-select"
+        onChange={(e) => setSelectedOption(e.target.value)}>
+          <option hidden value="">Memory Type</option>
           <option value="sensory">Sensory</option>
           <option value="shortTerm">Short Term</option>
           <option value="longTerm">Long Term</option>
         </select>
         <br/>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          required/>
-        <br/>
-        <input
-          type="text"
-          name="when"
-          placeholder="When?"
-          required/>
-        <br/>
-        <textarea
-          type="text"
-          name="description"
-          placeholder="What happened? Be specific!"
-          required/>
+        {selectedOption === 'sensory' && (
+          <React.Fragment>
+            {nameField}
+            <br/>
+            {whenField}
+            <br/>
+            <input
+              type="text"
+              name="touch"
+              placeholder="Touch"/>
+            <br/>
+            <input
+              type="text"
+              name="sight"
+              placeholder="Sight"/>
+            <br/>
+            <input
+              type="text"
+              name="hearing"
+              placeholder="Sound"/>
+            <br/>
+            <input
+              type="text"
+              name="smell"
+              placeholder="Taste"/>
+          </React.Fragment>
+        )}
+        {selectedOption === 'shortTerm' && (
+          <React.Fragment>
+            {nameField}
+            <br/>
+            {shortTermDescripField}
+          </React.Fragment>
+        )}
+        {selectedOption === 'longTerm' && (
+          <React.Fragment>
+            {nameField}
+            <br/>
+            {whenField}
+            <br/>
+            {longTermDescripField}
+          </React.Fragment>
+        )}
         <br/>
         <button type='submit'>{props.buttonText}</button>
-        <hr/>
       </form>
+      <hr/>
     </React.Fragment>
   )
 }
@@ -43,3 +76,34 @@ ReusableForm.propTypes = {
 }
 
 export default ReusableForm;
+
+{/* <input
+    type="text"
+    name="name"
+    placeholder="Name"
+    required/>
+  <br/> */}
+  {/* {selectedOption === 'sensory' && (
+    <React.Fragment>
+      <input
+        type="text"
+        name="when"
+        placeholder="When?"
+        required/>
+      <br/>
+    </React.Fragment>
+  )} */}
+  {/* <input
+    type="text"
+    name="when"
+    placeholder="When?"
+    required/>
+  <br/>
+  <textarea
+    type="text"
+    name="description"
+    placeholder="What happened? Be specific!"
+    required/>
+  <br/>
+  <button type='submit'>{props.buttonText}</button>
+  <hr/> */}
