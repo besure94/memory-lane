@@ -24,7 +24,14 @@ function MemoryControl() {
           memories.push({
             name: doc.data().name,
             when: doc.data().when,
-            description: doc.data().description,
+            touch: doc.data().touch,
+            sight: doc.data().sight,
+            sound: doc.data().sound,
+            smell: doc.data().smell,
+            taste: doc.data().taste,
+            shortTermDescription: doc.data().shortTermDescription,
+            longTermDescription: doc.data().longTermDescription,
+            type: doc.data().type,
             user: doc.data().user,
             date: jsDate,
             id: doc.id
