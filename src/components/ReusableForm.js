@@ -11,7 +11,7 @@ function ReusableForm(props) {
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        <select defaultValue="" class="form-select"
+        <select defaultValue="" className="form-select" name="memoryType"
         onChange={(e) => setSelectedOption(e.target.value)}>
           <option hidden value="">Memory Type</option>
           <option value="sensory">Sensory</option>
@@ -37,12 +37,17 @@ function ReusableForm(props) {
             <br/>
             <input
               type="text"
-              name="hearing"
+              name="sound"
               placeholder="Sound"/>
             <br/>
             <input
               type="text"
               name="smell"
+              placeholder="Smell"/>
+            <br/>
+            <input
+              type="text"
+              name="taste"
               placeholder="Taste"/>
           </React.Fragment>
         )}
@@ -76,34 +81,3 @@ ReusableForm.propTypes = {
 }
 
 export default ReusableForm;
-
-{/* <input
-    type="text"
-    name="name"
-    placeholder="Name"
-    required/>
-  <br/> */}
-  {/* {selectedOption === 'sensory' && (
-    <React.Fragment>
-      <input
-        type="text"
-        name="when"
-        placeholder="When?"
-        required/>
-      <br/>
-    </React.Fragment>
-  )} */}
-  {/* <input
-    type="text"
-    name="when"
-    placeholder="When?"
-    required/>
-  <br/>
-  <textarea
-    type="text"
-    name="description"
-    placeholder="What happened? Be specific!"
-    required/>
-  <br/>
-  <button type='submit'>{props.buttonText}</button>
-  <hr/> */}
