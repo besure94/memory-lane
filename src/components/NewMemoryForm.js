@@ -10,21 +10,22 @@ function NewMemoryForm(props) {
     const selectedOption = event.target.memoryType.value;
 
     const formData = {
+      type: selectedOption,
       name: event.target.name.value,
       user: auth.currentUser.email,
       date: serverTimestamp()
     }
 
-    if (selectedOption === 'sensory') {
+    if (selectedOption === 'Sensory') {
       formData.when = event.target.when.value;
       formData.touch = event.target.touch.value;
       formData.sight = event.target.sight.value;
       formData.sound = event.target.sound.value;
       formData.smell = event.target.smell.value;
       formData.taste = event.target.taste.value;
-    } else if (selectedOption === 'shortTerm') {
+    } else if (selectedOption === 'Short Term') {
       formData.shortTermDescription = event.target.shortTermDescription.value;
-    } else if (selectedOption === 'longTerm') {
+    } else if (selectedOption === 'Long Term') {
       formData.when = event.target.when.value;
       formData.longTermDescription = event.target.longTermDescription.value;
     }

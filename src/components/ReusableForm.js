@@ -14,12 +14,12 @@ function ReusableForm(props) {
         <select defaultValue="" className="form-select" name="memoryType"
         onChange={(e) => setSelectedOption(e.target.value)}>
           <option hidden value="">Memory Type</option>
-          <option value="sensory">Sensory</option>
-          <option value="shortTerm">Short Term</option>
-          <option value="longTerm">Long Term</option>
+          <option value="Sensory">Sensory</option>
+          <option value="Short Term">Short Term</option>
+          <option value="Long Term">Long Term</option>
         </select>
         <br/>
-        {selectedOption === 'sensory' && (
+        {selectedOption === 'Sensory' && (
           <React.Fragment>
             {nameField}
             <br/>
@@ -51,14 +51,14 @@ function ReusableForm(props) {
               placeholder="Taste"/>
           </React.Fragment>
         )}
-        {selectedOption === 'shortTerm' && (
+        {selectedOption === 'Short Term' && (
           <React.Fragment>
             {nameField}
             <br/>
             {shortTermDescripField}
           </React.Fragment>
         )}
-        {selectedOption === 'longTerm' && (
+        {selectedOption === 'Long Term' && (
           <React.Fragment>
             {nameField}
             <br/>

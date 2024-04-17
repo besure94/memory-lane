@@ -9,8 +9,6 @@ function MemoryList(props) {
         <Memory
           whenMemoryClicked={props.onMemorySelection}
           name={memory.name}
-          when={memory.when}
-          description={memory.description}
           user={memory.user}
           date={memory.date}
           id={memory.id}
