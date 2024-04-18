@@ -7,19 +7,44 @@ function EditMemoryForm(props) {
 
   function handleEditMemoryFormSubmission(event) {
     event.preventDefault();
-    props.onEditingMemory({
+    const formData = {
       name: event.target.name.value,
-      when: event.target.when.value,
-      description: event.target.description.value,
       id: memory.id
-    })
+    };
+
+    switch (event.target.memoryType.value) {
+      case "Sensory":
+        formData.type = event.target.memoryType.value;
+        formData.when = event.target.when.value;
+        formData.touch = event.target.touch.value;
+        formData.sight = event.target.sight.value;
+        formData.sound = event.target.sound.value;
+        formData.smell = event.target.smell.value;
+        formData.taste = event.target.taste.value;
+        break;
+      case "Short Term":
+        formData.type = event.target.memoryType.value;
+        formData.shortTermDescription = event.target.shortTermDescription.value;
+        break;
+      case "Long Term":
+        formData.type = event.target.memoryType.value;
+        formData.when = event.target.when.value;
+        formData.longTermDescription = event.target.longTermDescription.value;
+        break;
+      default:
+        break;
+    }
+
+    props.onEditingMemory(formData);
   }
 
   return (
     <React.Fragment>
       <ReusableForm
         formSubmissionHandler={handleEditMemoryFormSubmission}
-        buttonText={"Edit"}/>
+        buttonText={"Edit"}
+        memoryType={memory.type}
+        memory={memory}/>
     </React.Fragment>
   )
 }

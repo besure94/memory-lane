@@ -3,12 +3,16 @@ import PropTypes from "prop-types";
 
 function ReusableForm(props) {
   const [selectedOption, setSelectedOption] = useState('');
-  const nameField = <input type="text" name="name" placeholder="Memory Name" required/>;
-  const whenField = <input type="text" name="when" placeholder="When?" required/>;
-  const shortTermDescripField = <textarea type="text" name="shortTermDescription" placeholder="Details" required/>;
-  const longTermDescripField = <textarea type="text" name="longTermDescription" placeholder="What happened? Please be specific!" required/>;
-  const createButton = <button type='submit'>{props.buttonText}</button>;
 
+  const nameField = <input type="text" name="name" placeholder="Memory Name" defaultValue={props.memory !== undefined ? props.memory.name : ''} required/>;
+
+  const whenField = <input type="text" name="when" placeholder="When?" defaultValue={props.memory !== undefined ? props.memory.when : ''} required/>;
+
+  const shortTermDescripField = <textarea type="text" name="shortTermDescription" placeholder="Details" defaultValue={props.memory !== undefined ? props.memory.shortTermDescription : ''} required/>;
+
+  const longTermDescripField = <textarea type="text" name="longTermDescription" placeholder="What happened? Please be specific!" defaultValue={props.memory !== undefined ? props.memory.longTermDescription : ''} required/>;
+
+  const createButton = <button type='submit'>{props.buttonText}</button>;
 
   return (
     <React.Fragment>
@@ -37,30 +41,35 @@ function ReusableForm(props) {
               type="text"
               name="touch"
               placeholder="Touch"
+              defaultValue={props.memory !== undefined ? props.memory.touch : ''}
               required/>
             <br/>
             <input
               type="text"
               name="sight"
               placeholder="Sight"
+              defaultValue={props.memory !== undefined ? props.memory.sight : ''}
               required/>
             <br/>
             <input
               type="text"
               name="sound"
               placeholder="Sound"
+              defaultValue={props.memory !== undefined ? props.memory.sound : ''}
               required/>
             <br/>
             <input
               type="text"
               name="smell"
               placeholder="Smell"
+              defaultValue={props.memory !== undefined ? props.memory.smell : ''}
               required/>
             <br/>
             <input
               type="text"
               name="taste"
               placeholder="Taste"
+              defaultValue={props.memory !== undefined ? props.memory.taste : ''}
               required/>
             <br/>
             {createButton}

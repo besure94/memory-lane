@@ -3,6 +3,7 @@ import Memory from './Memory';
 import PropTypes from 'prop-types';
 
 function MemoryList(props) {
+  console.log("Memory list props log: ", props.memoryList);
   return (
     <React.Fragment>
       {props.memoryList.map((memory) =>
