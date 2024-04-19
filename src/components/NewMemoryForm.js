@@ -36,9 +36,11 @@ function NewMemoryForm(props) {
 
   return (
     <React.Fragment>
-      <ReusableForm
-        formSubmissionHandler={handleNewMemoryFormSubmission}
-        buttonText={"Create"}/>
+      <div className="create-memory-form">
+        <ReusableForm
+          formSubmissionHandler={handleNewMemoryFormSubmission}
+          buttonText={"Create"}/>
+      </div>
     </React.Fragment>
   );
 }

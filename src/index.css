@@ -23,6 +23,11 @@ code {
   padding-right: 1rem;
 }
 
+/* create memory form */
+.create-memory-form {
+  text-align: center;
+}
+
 /* edit form styling */
 .edit-form {
   text-align: center;
