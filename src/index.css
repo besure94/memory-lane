@@ -23,6 +23,11 @@ code {
   padding-right: 2rem;
 }
 
+/* message telling user to sign in  */
+#sign-in-reminder {
+  text-align: center;
+}
+
 /* table styling  */
 table {
   width: 40%;

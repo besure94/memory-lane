@@ -86,7 +86,7 @@ function MemoryControl() {
   if (auth.currentUser == null) {
     return (
       <React.Fragment>
-        <h1>You must be signed in to access this application!</h1>
+        <h1 id="sign-in-reminder">You must be signed in to access this application!</h1>
       </React.Fragment>
     )
   } else if (auth.currentUser != null) {
