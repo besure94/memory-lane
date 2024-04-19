@@ -59,14 +59,14 @@ function MemoryDetail(props) {
 
         {memory.type === "Short Term" && (
           <React.Fragment>
-            <h2>Details:</h2>
+            <h2>Details</h2>
             <p>{memory.shortTermDescription}</p>
           </React.Fragment>
         )}
 
         {memory.type === "Long Term" && (
           <React.Fragment>
-            <h2>Description:</h2>
+            <h2>Description</h2>
             <p>{memory.longTermDescription}</p>
           </React.Fragment>
         )}

@@ -35,7 +35,7 @@ function ReusableForm(props) {
                   {whenField}
                   <br/>
                   <br/>
-                  <label>Describe any sensory feelings related to this memory.</label>
+                  <label>Describe your sensory feelings related to this memory.</label>
                   <br/>
                   <input
                     type="text"
