@@ -10,14 +10,14 @@ function MemoryDetail(props) {
   return (
     <React.Fragment>
       <div className="memory-detail">
-        <h2>Memory Name</h2>
+        <h3>Memory Name</h3>
         <p>{memory.name}</p>
-        <h2>Memory Type</h2>
+        <h3>Memory Type</h3>
         <p>{memory.type}</p>
 
         {memory.type === "Sensory" && (
           <React.Fragment>
-            <h2>When?</h2>
+            <h3>When?</h3>
             <p>{memory.when}</p>
             <div className="table-container">
               <div className="row justify-content-center">
@@ -59,19 +59,19 @@ function MemoryDetail(props) {
 
         {memory.type === "Short Term" && (
           <React.Fragment>
-            <h2>Details</h2>
+            <h3>Details</h3>
             <p>{memory.shortTermDescription}</p>
           </React.Fragment>
         )}
 
         {memory.type === "Long Term" && (
           <React.Fragment>
-            <h2>Description</h2>
+            <h3>Description</h3>
             <p>{memory.longTermDescription}</p>
           </React.Fragment>
         )}
 
-        <p><em>Submitted by {memory.user} on {memory.date.toDateString()}</em></p>
+        <p><em>Submitted by <strong>{memory.user}</strong> on <strong>{memory.date.toDateString()}</strong></em></p>
 
         {auth.currentUser.email === memory.user ? (
           <React.Fragment>
