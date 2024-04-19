@@ -80,3 +80,8 @@ code {
 .message-to-user {
   font-size: 1.2rem;
 }
+
+/* table styling */
+.table th, .table td {
+  border: 0.125rem solid black;
+}
