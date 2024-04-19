@@ -52,47 +52,56 @@ function SignIn() {
   return (
     <React.Fragment>
       <div className="sign-in-forms">
-        <h1>Sign Up</h1>
-        {signUpSuccess}
-        <form onSubmit={doSignUp}>
-          <input
-            type="text"
-            name="email"
-            placeholder="Email"/>
-          <br/>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"/>
-          <br/>
-          <input
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password"/>
-          <br/>
-          <button type="submit">Sign Up</button>
-        </form>
+        <div className="row justify-content-center">
+          <div className="col-4">
+            <h1>Sign Up</h1>
+            {signUpSuccess}
+            <form onSubmit={doSignUp}>
+              <input
+                type="text"
+                name="email"
+                placeholder="Email"
+                className="form-control"/>
+              <br/>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                className="form-control"/>
+              <br/>
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                className="form-control"/>
+              <br/>
+              <button type="submit" className="btn btn-primary form-control">Sign Up</button>
+            </form>
 
-        <h1>Sign In</h1>
-        {signInSuccess}
-        <form onSubmit={doSignIn}>
-          <input
-            type="text"
-            name="signInEmail"
-            placeholder="Email"/>
-          <br/>
-          <input
-            type="password"
-            name="signInPassword"
-            placeholder="Password"/>
-          <br/>
-          <button type="submit">Sign In</button>
-        </form>
+            <h1>Sign In</h1>
+            {signInSuccess}
+            <form onSubmit={doSignIn}>
+              <input
+                type="text"
+                name="signInEmail"
+                placeholder="Email"
+                className="form-control"/>
+              <br/>
+              <input
+                type="password"
+                name="signInPassword"
+                placeholder="Password"
+                className="form-control"/>
+              <br/>
+              <button type="submit" className="btn btn-primary form-control">Sign In</button>
+            </form>
 
-        <h1>Sign Out</h1>
-        {signOutSuccess}
-        <br/>
-        <button onClick={doSignOut}>Sign Out</button>
+            <h1>Sign Out</h1>
+            {signOutSuccess}
+            <br/>
+            <button onClick={doSignOut} className="btn btn-danger form-control">Sign Out</button>
+            </div>
+        </div>
       </div>
     </React.Fragment>
   );

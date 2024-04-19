@@ -4,8 +4,8 @@ import { auth } from './../firebase.js';
 
 function MemoryDetail(props) {
   const { memory, onClickingDelete, onClickingEdit } = props;
-  const editButton = <button onClick={() => onClickingEdit(memory.id)}>Edit</button>;
-  const deleteButton = <button onClick={() => onClickingDelete(memory.id)}>Delete</button>;
+  const editButton = <button onClick={() => onClickingEdit(memory.id)} className="btn btn-success form-control">Edit</button>;
+  const deleteButton = <button onClick={() => onClickingDelete(memory.id)} className="btn btn-danger form-control">Delete</button>;
 
   return (
     <React.Fragment>
@@ -20,12 +20,12 @@ function MemoryDetail(props) {
             <h2>When?</h2>
             <p>{memory.when}</p>
             <div className="table-container">
-              <div class="row justify-content-center">
-                <div class="col-4">
-                  <table class="table">
+              <div className="row justify-content-center">
+                <div className="col-4">
+                  <table className="table">
                     <thead>
                       <tr>
-                        <th colspan="2"><h3 id="table-header">Senses</h3></th>
+                        <th colSpan="2"><h3 id="table-header">Senses</h3></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -75,9 +75,14 @@ function MemoryDetail(props) {
 
         {auth.currentUser.email === memory.user ? (
           <React.Fragment>
-            {editButton}
-            <br/>
-            {deleteButton}
+            <div className="row justify-content-center">
+              <div className="col-4">
+                {editButton}
+                <br/>
+                <br/>
+                {deleteButton}
+              </div>
+            </div>
           </React.Fragment>
         ) : (
           <React.Fragment>

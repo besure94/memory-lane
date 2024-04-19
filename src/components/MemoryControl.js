@@ -99,17 +99,17 @@ function MemoryControl() {
       currentlyVisibleState = <EditMemoryForm
         memory={selectedMemory}
         onEditingMemory={handleEditingMemory}/>
-      buttonText = "Memory List";
+      buttonText = "Return to Memory List";
     } else if (selectedMemory != null) {
       currentlyVisibleState = <MemoryDetail
         memory = {selectedMemory}
         onClickingEdit = {handleEditClick}
         onClickingDelete = {handleDeletingMemory}/>;
-      buttonText = "Memory List";
+      buttonText = "Return to Memory List";
     } else if (formVisibleOnPage) {
       currentlyVisibleState = <NewMemoryForm
         onNewMemoryCreation={handleCreatingNewMemory}/>;
-      buttonText = "Memory List";
+      buttonText = "Return to Memory List";
     } else {
       currentlyVisibleState = <MemoryList
         onMemorySelection={handleChangingSelectedMemory}
@@ -119,7 +119,11 @@ function MemoryControl() {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        {error ? null : <button onClick={handleClick} id="mem-control-btn">{buttonText}</button>}
+        <div className="row justify-content-center">
+          <div className="col-4">
+            {error ? null : <button onClick={handleClick} id="mem-control-btn" className="btn btn-primary form-control">{buttonText}</button>}
+          </div>
+        </div>
       </React.Fragment>
     );
   }

@@ -49,6 +49,11 @@ code {
   text-align: center;
 }
 
+/* reusable form styling */
+.form-select {
+  width: 40%;
+}
+
 /* message telling user to sign in  */
 #sign-in-reminder {
   text-align: center;
@@ -58,31 +63,3 @@ code {
 .sign-in-forms {
   text-align: center;
 }
-
-/* table styling  */
-
-/* .row {
-  border: 1px solid black;
-} */
-
-/* table {
-  width: 40%;
-}
-
-table {
-  border: 1px solid black;
-}
-
-.table-container {
-  display: flex;
-  justify-content: center;
-}
-
-#table-header {
-  text-align: center;
-}
-
-td, th, tr {
-  padding: 1.25rem;
-  border: 1px solid black;
-} */
