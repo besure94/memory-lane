@@ -19,8 +19,13 @@ code {
 
 /* container styling */
 #root {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* memory list styling */
+.memory-list {
+  text-align: center;
 }
 
 /* message telling user to sign in  */

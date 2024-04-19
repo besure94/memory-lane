@@ -5,15 +5,17 @@ import PropTypes from 'prop-types';
 function MemoryList(props) {
   return (
     <React.Fragment>
-      {props.memoryList.map((memory) =>
-        <Memory
-          whenMemoryClicked={props.onMemorySelection}
-          name={memory.name}
-          user={memory.user}
-          date={memory.date}
-          id={memory.id}
-          key={memory.id}/>
-      )}
+      <div className="memory-list">
+        {props.memoryList.map((memory) =>
+          <Memory
+            whenMemoryClicked={props.onMemorySelection}
+            name={memory.name}
+            user={memory.user}
+            date={memory.date}
+            id={memory.id}
+            key={memory.id}/>
+        )}
+      </div>
     </React.Fragment>
   );
 }
