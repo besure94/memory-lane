@@ -18,16 +18,35 @@ function MemoryDetail(props) {
         <React.Fragment>
           <h2>When?</h2>
           <p>{memory.when}</p>
-          <h2>Touch:</h2>
-          <p>{memory.touch}</p>
-          <h2>Sight:</h2>
-          <p>{memory.sight}</p>
-          <h2>Sound:</h2>
-          <p>{memory.sound}</p>
-          <h2>Smell:</h2>
-          <p>{memory.smell}</p>
-          <h2>Taste:</h2>
-          <p>{memory.taste}</p>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2"><h3 id="table-header">Senses</h3></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Touch</th>
+                <td>{memory.touch}</td>
+              </tr>
+              <tr>
+                <th>Sight</th>
+                <td>{memory.sight}</td>
+              </tr>
+              <tr>
+                <th>Sound</th>
+                <td>{memory.sound}</td>
+              </tr>
+              <tr>
+                <th>Smell</th>
+                <td>{memory.smell}</td>
+              </tr>
+              <tr>
+                <th>Taste</th>
+                <td>{memory.taste}</td>
+              </tr>
+            </tbody>
+          </table>
         </React.Fragment>
       )}
 
