@@ -1,74 +1,51 @@
-# Extra Functionality Ideas
+# Memory Lane
 
-* Add CSS styling to application.
+#### An application where users can create a log of various types of memories that they want to remember.
 
-# Getting Started with Create React App
+#### By Brian Scherner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies Used
 
-## Available Scripts
+* React
+* JavaScript
+* JSX
+* HTML
+* Webpack
+* Node Package Manager
+* Babel
+* ES Lint
+* CSS
+* Bootstrap
+* Firebase
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+This application presents users with a home page. In order to use the app, they must be signed into an account, which they can create by clicking on `Sign In`. Here they will be shown a form where they enter their email and password to create their account. Note that signing up for an account will mean you are already signed in. Using the `Sign In` form below is not necessary if you have just signed up for an account.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+After signing in, users can create memories to add them to a dynamic list. Users can click `Create Memory`, which will show them a dropdown menu, where they can select the type of memory they want to create. Depending on which type they select, a different form will be rendered. When users submit the form, they are taken back to the home page, where they can view their list of memories. Memories in the list are shown by the memory's name, the user who created it, and the date of creation.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users can also click on a memory to view its details. After doing so, the memory's details will expand and all of the memory's details are shown. Users can optionally `Edit` or `Delete` a memory, but only if it is for a memory that they created.
 
-### `npm test`
+When a user is finished, they can simply select `Sign In`, and then select `Sign Out` to log out of their account.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This application features Firebase. All data for memories and authenticated users is stored here.
 
-### `npm run build`
+## Setup/Installation Requirements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Cloning and Using Repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Select the green `Code` button, and clone this repository to your desktop.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* In your terminal, navigate to this project's folder, and run the command `$ npm install`. This will install all of the necessary packages.
 
-### `npm run eject`
+* Run the command `$ npm run start` to start a live development server. This will open the project in your web browser at the URL `localhost:3000`, allowing you to use the application.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Known Bugs
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+None.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+MIT
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Copyright(c) 2024 Brian Scherner
