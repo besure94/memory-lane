@@ -19,7 +19,9 @@ code {
 }
 
 #main-heading {
-  font-size: 3rem;
+  font-size: 3.75rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 600;
 }
 
 /* container styling */

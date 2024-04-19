@@ -27,15 +27,13 @@ function ReusableForm(props) {
                 <option value="Short Term">Short Term</option>
                 <option value="Long Term">Long Term</option>
               </select>
-              <br/>
               {selectedOption === 'Sensory' && (
                 <React.Fragment>
                   {nameField}
                   <br/>
                   {whenField}
                   <br/>
-                  <br/>
-                  <label>Describe your sensory feelings related to this memory.</label>
+                  <label className="details">Describe your sensory feelings related to this memory.</label>
                   <br/>
                   <input
                     type="text"
