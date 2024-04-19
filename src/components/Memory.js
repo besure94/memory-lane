@@ -5,8 +5,8 @@ function Memory(props) {
   return (
     <React.Fragment>
       <div onClick={() => props.whenMemoryClicked(props.id)}>
-        <h2>{props.name}</h2>
-        <p><em>Submitted by <strong>{props.user}</strong> on <strong>{props.date.toDateString()}</strong></em></p>
+        <h3>{props.name}</h3>
+        <p className="memory-in-list"><em>Submitted by <strong>{props.user}</strong> on <strong>{props.date.toDateString()}</strong></em></p>
         <hr/>
       </div>
     </React.Fragment>

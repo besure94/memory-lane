@@ -49,9 +49,17 @@ code {
   text-align: center;
 }
 
+.details {
+  font-size: 1.25rem;
+}
+
 /* memory list styling */
 .memory-list {
   text-align: center;
+}
+
+.memory-in-list {
+  font-size: 1.1rem;
 }
 
 /* reusable form styling */

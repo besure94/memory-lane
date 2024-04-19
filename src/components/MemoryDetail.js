@@ -11,14 +11,14 @@ function MemoryDetail(props) {
     <React.Fragment>
       <div className="memory-detail">
         <h3>Memory Name</h3>
-        <p>{memory.name}</p>
+        <p className="details">{memory.name}</p>
         <h3>Memory Type</h3>
-        <p>{memory.type}</p>
+        <p className="details">{memory.type}</p>
 
         {memory.type === "Sensory" && (
           <React.Fragment>
             <h3>When?</h3>
-            <p>{memory.when}</p>
+            <p className="details">{memory.when}</p>
             <div className="table-container">
               <div className="row justify-content-center">
                 <div className="col-4">
@@ -29,23 +29,23 @@ function MemoryDetail(props) {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                      <tr className="details">
                         <th>Touch</th>
                         <td>{memory.touch}</td>
                       </tr>
-                      <tr>
+                      <tr className="details">
                         <th>Sight</th>
                         <td>{memory.sight}</td>
                       </tr>
-                      <tr>
+                      <tr className="details">
                         <th>Sound</th>
                         <td>{memory.sound}</td>
                       </tr>
-                      <tr>
+                      <tr className="details">
                         <th>Smell</th>
                         <td>{memory.smell}</td>
                       </tr>
-                      <tr>
+                      <tr className="details">
                         <th>Taste</th>
                         <td>{memory.taste}</td>
                       </tr>
@@ -60,18 +60,18 @@ function MemoryDetail(props) {
         {memory.type === "Short Term" && (
           <React.Fragment>
             <h3>Details</h3>
-            <p>{memory.shortTermDescription}</p>
+            <p className="details">{memory.shortTermDescription}</p>
           </React.Fragment>
         )}
 
         {memory.type === "Long Term" && (
           <React.Fragment>
             <h3>Description</h3>
-            <p>{memory.longTermDescription}</p>
+            <p className="details">{memory.longTermDescription}</p>
           </React.Fragment>
         )}
 
-        <p><em>Submitted by <strong>{memory.user}</strong> on <strong>{memory.date.toDateString()}</strong></em></p>
+        <p className="details"><em>Submitted by <strong>{memory.user}</strong> on <strong>{memory.date.toDateString()}</strong></em></p>
 
         {auth.currentUser.email === memory.user ? (
           <React.Fragment>
