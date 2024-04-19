@@ -1,7 +1,5 @@
 # Extra Functionality Ideas
 
-* Add more properties to memories to make them more descriptive.
-
 * Add CSS styling to application.
 
 # Getting Started with Create React App
