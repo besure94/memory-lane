@@ -4,15 +4,11 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <React.Fragment>
-      <h1>Memory Lane</h1>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="sign-in">Sign In</Link>
-        </li>
-      </ul>
+      <div className='app-header'>
+        <h1>Memory Lane</h1>
+          <p><Link to="/">Home</Link></p>
+          <p><Link to="sign-in">Sign In</Link></p>
+      </div>
       <hr/>
     </React.Fragment>
   );

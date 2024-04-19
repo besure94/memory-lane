@@ -12,6 +12,18 @@ code {
     monospace;
 }
 
+/* app header styling */
+.app-header {
+  text-align: center;
+}
+
+/* container styling */
+#root {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* table styling  */
 table {
   width: 40%;
 }
