@@ -29,6 +29,11 @@ code {
   margin: auto;
 }
 
+/* memory detail styling */
+.memory-detail {
+  text-align: center;
+}
+
 /* memory list styling */
 .memory-list {
   text-align: center;
@@ -40,12 +45,18 @@ code {
 }
 
 /* table styling  */
+
 table {
   width: 40%;
 }
 
 table {
   border: 1px solid black;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
 }
 
 #table-header {
