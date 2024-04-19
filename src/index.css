@@ -23,6 +23,12 @@ code {
   padding-right: 1rem;
 }
 
+/* memory control component button styling */
+#mem-control-btn {
+  display: block;
+  margin: auto;
+}
+
 /* memory list styling */
 .memory-list {
   text-align: center;

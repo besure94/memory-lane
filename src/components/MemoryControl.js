@@ -119,7 +119,7 @@ function MemoryControl() {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        {error ? null : <button onClick={handleClick}>{buttonText}</button>}
+        {error ? null : <button onClick={handleClick} id="mem-control-btn">{buttonText}</button>}
       </React.Fragment>
     );
   }
