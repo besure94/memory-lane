@@ -55,7 +55,10 @@ function SignIn() {
         <div className="row justify-content-center">
           <div className="col-4">
             <h1>Sign Up</h1>
-            {signUpSuccess}
+            <div className="message-to-user">
+              {signUpSuccess}
+            </div>
+            <br/>
             <form onSubmit={doSignUp}>
               <input
                 type="text"
@@ -80,7 +83,10 @@ function SignIn() {
             <br/>
 
             <h1>Sign In</h1>
-            {signInSuccess}
+            <div className="message-to-user">
+              {signInSuccess}
+            </div>
+            <br/>
             <form onSubmit={doSignIn}>
               <input
                 type="text"
@@ -98,7 +104,9 @@ function SignIn() {
             </form>
             <br/>
 
-            {signOutSuccess}
+            <div className="message-to-user">
+              {signOutSuccess}
+            </div>
             <br/>
             <button onClick={doSignOut} className="btn btn-danger form-control">Sign Out</button>
             </div>

@@ -76,3 +76,7 @@ code {
 .sign-in-forms {
   text-align: center;
 }
+
+.message-to-user {
+  font-size: 1.2rem;
+}
