@@ -20,35 +20,39 @@ function MemoryDetail(props) {
             <h2>When?</h2>
             <p>{memory.when}</p>
             <div className="table-container">
-              <table>
-                <thead>
-                  <tr>
-                    <th colspan="2"><h3 id="table-header">Senses</h3></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>Touch</th>
-                    <td>{memory.touch}</td>
-                  </tr>
-                  <tr>
-                    <th>Sight</th>
-                    <td>{memory.sight}</td>
-                  </tr>
-                  <tr>
-                    <th>Sound</th>
-                    <td>{memory.sound}</td>
-                  </tr>
-                  <tr>
-                    <th>Smell</th>
-                    <td>{memory.smell}</td>
-                  </tr>
-                  <tr>
-                    <th>Taste</th>
-                    <td>{memory.taste}</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="row justify-content-center">
+                <div class="col-8">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th colspan="2"><h3 id="table-header">Senses</h3></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Touch</th>
+                        <td>{memory.touch}</td>
+                      </tr>
+                      <tr>
+                        <th>Sight</th>
+                        <td>{memory.sight}</td>
+                      </tr>
+                      <tr>
+                        <th>Sound</th>
+                        <td>{memory.sound}</td>
+                      </tr>
+                      <tr>
+                        <th>Smell</th>
+                        <td>{memory.smell}</td>
+                      </tr>
+                      <tr>
+                        <th>Taste</th>
+                        <td>{memory.taste}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </React.Fragment>
         )}

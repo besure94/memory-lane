@@ -61,7 +61,11 @@ code {
 
 /* table styling  */
 
-table {
+/* .row {
+  border: 1px solid black;
+} */
+
+/* table {
   width: 40%;
 }
 
@@ -81,4 +85,4 @@ table {
 td, th, tr {
   padding: 1.25rem;
   border: 1px solid black;
-}
+} */
