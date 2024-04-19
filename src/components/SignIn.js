@@ -77,7 +77,7 @@ function SignIn() {
               <br/>
               <button type="submit" className="btn btn-primary form-control">Sign Up</button>
             </form>
-
+            <br/>
             <h1>Sign In</h1>
             {signInSuccess}
             <form onSubmit={doSignIn}>
@@ -95,8 +95,7 @@ function SignIn() {
               <br/>
               <button type="submit" className="btn btn-primary form-control">Sign In</button>
             </form>
-
-            <h1>Sign Out</h1>
+            <br/>
             {signOutSuccess}
             <br/>
             <button onClick={doSignOut} className="btn btn-danger form-control">Sign Out</button>
