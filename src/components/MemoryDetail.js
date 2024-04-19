@@ -10,9 +10,9 @@ function MemoryDetail(props) {
   return (
     <React.Fragment>
       <div className="memory-detail">
-        <h2>Memory:</h2>
+        <h2>Memory Name</h2>
         <p>{memory.name}</p>
-        <h2>Type:</h2>
+        <h2>Memory Type</h2>
         <p>{memory.type}</p>
 
         {memory.type === "Sensory" && (
