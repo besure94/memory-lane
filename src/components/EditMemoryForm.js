@@ -40,11 +40,13 @@ function EditMemoryForm(props) {
 
   return (
     <React.Fragment>
-      <ReusableForm
-        formSubmissionHandler={handleEditMemoryFormSubmission}
-        buttonText={"Edit"}
-        memoryType={memory.type}
-        memory={memory}/>
+      <div className="edit-form">
+        <ReusableForm
+          formSubmissionHandler={handleEditMemoryFormSubmission}
+          buttonText={"Edit"}
+          memoryType={memory.type}
+          memory={memory}/>
+      </div>
     </React.Fragment>
   )
 }

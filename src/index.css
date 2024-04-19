@@ -23,6 +23,11 @@ code {
   padding-right: 1rem;
 }
 
+/* edit form styling */
+.edit-form {
+  text-align: center;
+}
+
 /* memory control component button styling */
 #mem-control-btn {
   display: block;
