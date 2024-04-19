@@ -51,47 +51,49 @@ function SignIn() {
 
   return (
     <React.Fragment>
-      <h1>Sign Up</h1>
-      {signUpSuccess}
-      <form onSubmit={doSignUp}>
-        <input
-          type="text"
-          name="email"
-          placeholder="Email"/>
-        <br/>
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"/>
-        <br/>
-        <input
-          type="password"
-          name="confirmPassword"
-          placeholder="Confirm Password"/>
-        <br/>
-        <button type="submit">Sign Up</button>
-      </form>
+      <div className="sign-in-forms">
+        <h1>Sign Up</h1>
+        {signUpSuccess}
+        <form onSubmit={doSignUp}>
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"/>
+          <br/>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"/>
+          <br/>
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"/>
+          <br/>
+          <button type="submit">Sign Up</button>
+        </form>
 
-      <h1>Sign In</h1>
-      {signInSuccess}
-      <form onSubmit={doSignIn}>
-        <input
-          type="text"
-          name="signInEmail"
-          placeholder="Email"/>
-        <br/>
-        <input
-          type="password"
-          name="signInPassword"
-          placeholder="Password"/>
-        <br/>
-        <button type="submit">Sign In</button>
-      </form>
+        <h1>Sign In</h1>
+        {signInSuccess}
+        <form onSubmit={doSignIn}>
+          <input
+            type="text"
+            name="signInEmail"
+            placeholder="Email"/>
+          <br/>
+          <input
+            type="password"
+            name="signInPassword"
+            placeholder="Password"/>
+          <br/>
+          <button type="submit">Sign In</button>
+        </form>
 
-      <h1>Sign Out</h1>
-      {signOutSuccess}
-      <br/>
-      <button onClick={doSignOut}>Sign Out</button>
+        <h1>Sign Out</h1>
+        {signOutSuccess}
+        <br/>
+        <button onClick={doSignOut}>Sign Out</button>
+      </div>
     </React.Fragment>
   );
 }
