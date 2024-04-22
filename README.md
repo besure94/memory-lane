@@ -40,6 +40,10 @@ This application features Firebase. All data for memories and authenticated user
 
 * Run the command `$ npm run start` to start a live development server. This will open the project in your web browser at the URL `localhost:3000`, allowing you to use the application.
 
+#### Setting Up Firebase
+
+To set up a Firebase project for this repository, please follow along with these lessons from [fidgetechcode.org](https://fidgetechcode.org/react/react-with-nosql/4-4-0-9-setting-up-a-firebase-project-firestore-database-and-web-app). Follow the setup instructions for lessons `4.4.0.9`, `4.4.0.10`, and `4.4.0.11`.
+
 ## Known Bugs
 
 None.
