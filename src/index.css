@@ -74,6 +74,11 @@ code {
   text-align: center;
 }
 
+/* page not found */
+.page-not-found {
+  text-align: center;
+}
+
 /* sign in forms */
 .sign-in-forms {
   text-align: center;

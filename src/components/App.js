@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/sign-in" element={<SignIn/>}/>
         <Route path="/" element={<MemoryControl/>}/>
+        <Route path="*" element={<h1 className='page-not-found'>Page not found!</h1>}/>
       </Routes>
     </Router>
   );
